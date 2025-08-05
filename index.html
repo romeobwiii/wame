@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🖤 A Message From Your Wife 🖤</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* --- UPDATED: Background Photo Only --- */
+            background: url('images/hero.jpg') no-repeat center center fixed;
+            background-size: cover;
+            /* -------------------------------------- */
+
+            color: #4a4a4a;
+            font-family: 'Montserrat', sans-serif;
+            padding: 3rem;
+            line-height: 1.8;
+            max-width: 750px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            text-align: center;
+            color: #a0525c;
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            animation: fadeInDown 2s ease forwards;
+        }
+
+        .card {
+            background-color: #ffffff; /* This is the white card background */
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 3rem 3.5rem;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+            border: 1px solid #f0dada;
+            animation: fadeInScaleUp 2s ease forwards;
+            animation-delay: 0.5s;
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#eee 1px, transparent 1px);
+            background-size: 10px 10px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .message {
+            font-size: 1.1em;
+            white-space: pre-line;
+            color: #e41515;
+            letter-spacing: 0.02em;
+        }
+
+        .typewriter-cursor {
+            display: inline-block;
+            width: 0.5em;
+            height: 1.1em;
+            background-color: #a0525c;
+            animation: blink 0.8s step-end infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInScaleUp {
+            0% { opacity: 0; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes blink {
+            from, to { background-color: transparent; }
+            50% { background-color: #a0525c; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>For My cute husband</h1>
+    <div class="card">
+        <div class="message" id="text"></div>
+        <span id="cursor" class="typewriter-cursor"></span>
+    </div>
+
+    <script>
+        const message = `From the moment our paths crossed, my heart knew it had found its home.",
+        "Your love is my strength, your smile my sunshine, and your presence my peace.",
+        Your smile lights up my darkest days, and your laughter is my favorite melody.",
+        "Every moment with you is a treasure, and every day I’m grateful for your love.",
+        "You are my partner, my best friend, my forever.",
+        "Every day with you feels like a beautiful dream I never want to wake up from.",
+        "You are more than my husband — you are my soulmate, my best friend, my everything.",
+         You are my strength, my joy, and my greatest blessing
+         I love you more every single day. 💕
+        "Thank you for loving me so deeply, so truly, so endlessly.",
+        "With all my heart,",
+"Your Wife ❤"
+Wame`;
+
+        let index = 0;
+        const textElement = document.getElementById("text");
+        const cursorElement = document.getElementById("cursor");
+
+        function typeWriter() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeWriter, 40);
+            } else {
+                cursorElement.style.display = 'none';
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+
+</body>
+</html>
